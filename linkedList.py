@@ -17,6 +17,14 @@ class Node:
   def set_next_node(self, next_node):
     self.next_node = next_node
 
+  def has_next(self):
+      if self.get_next_node() is None:
+          return False
+      return True
+
+  def to_string(self):
+      return "Node value: " + str(self.get_value)
+
 # Create your LinkedList class below:
 class LinkedList:
   def __init__(self, value=None):
@@ -35,7 +43,7 @@ class LinkedList:
     current_node = self.get_head_node()
     while (current_node):
         if (current_node.get_value() != None):
-            stringlist += str(current_node.get_value()) + "\n"
+            string_list += str(current_node.get_value()) + "\n"
         current_node = current_node.get_next_node()
     return string_list
 
@@ -59,3 +67,54 @@ class LinkedList:
           current_node = None #set none to current_node means to stop the while loop
         else:
           current_node = next_node
+
+  def print_list(self):
+    print("list is")
+    if self.root is None:
+        return
+    this_node = self.root
+    print (this_node.to_string())
+    while this_node.has_next():
+        this_node = this_node.get_next()
+        print(this_node.to_string())
+
+def main():
+    
+    a= Node(5)
+    b= Node(6,a)
+    c= Node(7,b)
+    d = LinkedList(c)
+    # myList=LinkedList()
+    # myList.insert_beginning(5)
+    # myList.insert_beginning(9)
+    # myList.insert_beginning(3)
+    # print(myList.stringify_list())
+
+
+    #print(d.print_list())
+
+main()
+#if __name__ == "__main__":   this line is equivalent with main()
+    # myList=LinkedList()
+    # myList.insert_beginning(5)
+    # myList.insert_beginning(9)
+    # myList.insert_beginning(3)
+    # print(myList.stringify_list())
+
+
+    # # defining linked list
+    # ll = LinkedList()
+ 
+    # # defining nodes
+    # node1 = Node(10)
+    # node2 = Node(15)
+    # node3 = Node(20)
+ 
+    # # connecting the nodes
+    # ll.head = node1
+    # node1.next = node2
+    # node2.next = node3
+     
+    # # when print is called, by default
+    # #it calls the __str__ method
+    # print(ll)
