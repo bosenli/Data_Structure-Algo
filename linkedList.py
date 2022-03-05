@@ -1,6 +1,6 @@
 #head node , tail node with "null" at its link
 #node operation: add, remove, find, traversing
-
+# https://www.youtube.com/watch?v=qp8u-frRAnU
 #node
 
 class Node:
@@ -47,6 +47,12 @@ class LinkedList:
         current_node = current_node.get_next_node()
     return string_list
 
+  def print_list(self):
+    print("list is")
+    node = self.get_head_node()
+    while node:
+        print (node.get_value())
+        node = node.get_next_node()
  
   # Define your remove_node method below:
   # def remove_node(self, value_to_remove):
@@ -68,32 +74,26 @@ class LinkedList:
         else:
           current_node = next_node
 
-  def print_list(self):
-    print("list is")
-    if self.root is None:
-        return
-    this_node = self.root
-    print (this_node.to_string())
-    while this_node.has_next():
-        this_node = this_node.get_next()
-        print(this_node.to_string())
 
-def main():
+
+# def main():
     
-    a= Node(5)
-    b= Node(6,a)
-    c= Node(7,b)
-    d = LinkedList(c)
-    # myList=LinkedList()
-    # myList.insert_beginning(5)
-    # myList.insert_beginning(9)
-    # myList.insert_beginning(3)
-    # print(myList.stringify_list())
+#     # a= Node(5)
+#     # b= Node(6,a)
+#     # c= Node(7,b)
+#     # d = LinkedList(c)
+#     # print(d.print_list())
+#     myList=LinkedList()
+#     myList.insert_beginning(5)
+#     myList.insert_beginning(9)
+#     myList.insert_beginning(3)
+#     # print(myList.stringify_list())
+#     print(myList.print_list())
 
 
-    #print(d.print_list())
+#     #print(d.print_list())
 
-main()
+# main()
 #if __name__ == "__main__":   this line is equivalent with main()
     # myList=LinkedList()
     # myList.insert_beginning(5)
