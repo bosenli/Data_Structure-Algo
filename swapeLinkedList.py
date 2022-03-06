@@ -62,7 +62,7 @@ def swap_nodes(input_list, val1, val2):
   node2.set_next_node(temp)
 
 
-ll = LinkedList.LinkedList()
+ll = LinkedList()
 for i in range(10):
   ll.insert_beginning(i)
 
